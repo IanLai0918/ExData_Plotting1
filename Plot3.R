@@ -12,7 +12,7 @@ subpowerdata$Time <- strptime(subpowerdata$Time, format="%H:%M:%S")
 subpowerdata[1:1440,"Time"] <- format(subpowerdata[1:1440,"Time"],"2007-02-01 %H:%M:%S")
 subpowerdata[1441:2880,"Time"] <- format(subpowerdata[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
 
-# Generating the plot with three different lines
+# Generating the plot with the appropriate legends
 plot(subpowerdata$Time,subpowerdata$Sub_metering_1,type="n",xlab="",ylab="Energy sub metering")
 with(subpowerdata,lines(Time,as.numeric(as.character(Sub_metering_1))))
 with(subpowerdata,lines(Time,as.numeric(as.character(Sub_metering_2)),col="red"))
